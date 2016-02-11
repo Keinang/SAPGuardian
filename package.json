@@ -1,0 +1,23 @@
+{
+  "name": "innojam",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-http-proxy": "^0.6.0",
+    "http-proxy": "^1.13.1",
+    "node-static": "^0.7.7",
+	"nodejs-websocket": "1.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.wdf.sap.corp:i061095/DOA---Innojam2016.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

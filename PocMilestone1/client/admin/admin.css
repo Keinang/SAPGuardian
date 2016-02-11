@@ -1,0 +1,41 @@
+
+body{
+    border: 1px solid maroon;
+    text-align:center;
+}
+
+.buttonWrapper{
+    margin: 40px 0px 0px 20px;
+}
+
+#wrapper{
+    background-color: beige;
+    padding-bottom: 30px;
+    margin:0 auto;
+    width:900px;
+    text-align: left;
+}
+.button{
+}
+
+header{
+    background-color: maroon;
+    height: 90px;
+    padding: 1px;
+}
+
+article{
+}
+
+#header{
+    font-family: Vivaldi;
+    font-size: -webkit-xxx-large;
+    color: beige;
+    margin-left: 74px;
+    margin-top: 0px;
+    padding-top: 14px;
+}
+
+h2{
+    color: #800000;
+}

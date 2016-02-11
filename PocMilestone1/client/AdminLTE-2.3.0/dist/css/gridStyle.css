@@ -1,0 +1,15 @@
+.floatButtonRight {
+  float: right;
+}
+
+.inlineReference {
+  display: inline;
+}
+
+.sidebar-menu .treeview-menu > li > a.inlineReference {
+  display: inline-block;
+}
+
+.btn-menu {
+  margin: 4px 2px 4px 0px;
+}

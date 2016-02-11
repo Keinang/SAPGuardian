@@ -1,0 +1,165 @@
+{
+  "version": 0,
+  "targets": [
+      {
+          "name": "Swissa, Adi",
+          "image": "Adi.jpg",
+          "icon": "icon_adi1.png",
+          "warningImage": "no_warning.png",
+          "status": "online",
+          "css_status": "text-success",
+          "address": "Leyad Hayam 2",
+          "numberOfResidents": 3,
+          "alarm": true,
+          "fortifications": true,
+          "enableSecurityMode": true,
+          "lastEnableTime": "",
+          "warn": true,
+          "position": {
+              "lat": 32.182925,
+              "lng": 34.906590
+          },
+          "economyData": [
+              30,31,29,33,30,30,31,32,35,39
+          ]
+          ,
+          "economyDataAvg": [
+              30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5
+          ]
+      },
+    {
+      "name": "Kinarti, Barak",
+      "image": "Barak.jpg",
+        "icon": "icon_barak1.png",
+        "warningImage": "no_warning.png",
+        "status": "online",
+        "css_status": "text-success",
+      "address": "Hameyasdim 12",
+      "numberOfResidents": 3,
+      "alarm": true,
+      "fortifications": true,
+      "enableSecurityMode": true,
+      "lastEnableTime": "04/01/2016 22:00:00",
+      "warn": true,
+      "position": {
+        "lat": 32.180575,
+        "lng": 34.903750
+      },
+      "economyData": [
+        30,31,29,33,30,30,31,32,35,39
+      ]
+    ,
+      "economyDataAvg": [
+        30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5
+      ]
+    },
+      {
+          "name": "Keinan, Gilad",
+          "image": "Gilad.jpg",
+          "icon": "icon_gilad.png",
+          "warningImage": "no_warning.png",
+          "status": "online",
+          "css_status": "text-success",
+          "address": "Leyad Hayam 2",
+          "numberOfResidents": 3,
+          "alarm": true,
+          "fortifications": true,
+          "enableSecurityMode": true,
+          "lastEnableTime": "",
+          "warn": true,
+          "position": {
+              "lat": 32.164038,
+              "lng": 34.796558
+          },
+          "economyData": [
+              30,31,29,33,30,30,31,32,35,39
+          ]
+          ,
+          "economyDataAvg": [
+              30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5
+          ]
+      },
+    {
+      "name": "Alhazov, Sergey",
+        "image": "Sergey.jpg",
+        "icon": "icon_sergey.png",
+        "warningImage": "no_warning.png",
+        "status": "offline",
+        "css_status": "text-danger",
+      "address": "Florentin 31",
+      "numberOfResidents": 3,
+      "alarm": true,
+      "fortifications": true,
+      "enableSecurityMode": true,
+      "lastEnableTime": "",
+      "warn": true,
+      "position": {
+        "lat": 32.179515,
+        "lng": 34.918692
+      },
+      "economyData": [
+        30,31,29,33,30,30,31,32,35,39
+      ]
+    ,
+      "economyDataAvg": [
+        30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5
+      ]
+    },
+    {
+      "name": "Turin, Daniel",
+        "image": "Daniel.jpg",
+        "icon": "icon_daniel.png",
+        "warningImage": "no_warning.png",
+        "status": "offline",
+        "css_status": "text-danger",
+      "address": "Tidhar 15",
+      "numberOfResidents": 3,
+      "alarm": true,
+      "fortifications": true,
+      "enableSecurityMode": true,
+      "lastEnableTime": "",
+      "warn": true,
+      "position": {
+        "lat": 32.177100,
+        "lng": 34.918000
+      },
+      "economyData": [
+        30,31,29,33,30,30,31,32,35,39
+      ]
+      ,
+      "economyDataAvg": [
+        30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5
+      ]
+    },
+      {
+          "name": "Ohad Granica",
+          "image": "Ohad.jpg",
+          "icon": "icon_ohad.png",
+          "warningImage": "no_warning.png",
+          "status": "offline",
+          "css_status": "text-danger",
+          "address": "Leyad Swissa 3",
+          "numberOfResidents": 3,
+          "alarm": true,
+          "fortifications": true,
+          "enableSecurityMode": true,
+          "lastEnableTime": "05/01/2016 08:00:00",
+          "warn": true,
+          "position": {
+              "lat": 32.182990,
+              "lng": 34.913564
+          },
+          "economyData": [
+              30,31,29,33,30,30,31,32,35,39
+          ]
+          ,
+          "economyDataAvg": [
+              30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5
+          ]
+      }
+  ]
+}
+
+
+
+

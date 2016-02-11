@@ -1,0 +1,19 @@
+{"name": "Fishler, Ido",
+  "address": "Gheula 15",
+  "numberOfResidents": 3,
+  "alarm": true,
+  "fortifications": false,
+  "enableSecurityMode": false,
+  "lastEnableTime": "",
+  "position": {
+    "lat": 32.177000,
+    "lng": 34.910000
+  },
+  "economyData": [
+    30,31,29,33,30,30,31,32,30,31
+  ]
+,
+  "economyDataAvg": [
+    30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5,30.5
+  ]
+}

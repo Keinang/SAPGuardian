@@ -1,0 +1,13 @@
+<div id="searchContainer" class="search">
+    <form class="form-wrapper cf">
+        <input id="pac-input" class="controls" type="text" placeholder="Search here" required ng-model="search"/>
+        <button type="submit" ng-click="doSearch()">Search</button>
+    </form>
+    <div class="itemContainer"
+         ng-repeat="item in searchResult.places" ng-click="showItemInfo(item)">
+        <span>{{item.name}}</span>
+        <span>{{item.price}}</span>
+        <span>{{search}}</span>
+    </div>
+</div>
+<google-map search-map-id="pac-input"/>

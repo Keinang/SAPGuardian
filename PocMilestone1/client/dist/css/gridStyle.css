@@ -1,0 +1,51 @@
+.floatButtonRight {
+  float: right;
+}
+
+.secondaryBanner {
+  padding-bottom: 15px;
+}
+
+.inlineReference {
+  display: inline;
+  text-overflow: ellipsis;
+  width: 190px;
+  overflow: hidden;
+}
+
+.logoTitle {
+  margin-left: 35px;
+}
+
+.listSeparators {
+  margin: 0px;
+  border: 0;
+  border-top: 1px solid #527a7a;
+}
+
+.surnameText {
+  font-size: 1.2rem;
+}
+
+.sidebar-menu .treeview-menu > li > a.inlineReference {
+  display: inline-block;
+}
+
+.btn-menu {
+  margin: 2px 2px 2px 0px;
+}
+
+.callBtn {
+  margin-left: 1px;
+}
+
+.redDog {
+  background-image: url('/DOA---Innojam2016/PocMilestone1/client/images/redDog.png');
+  background-repeat: no-repeat;
+  background-size: 35px;
+  background-position: 0px 8px;
+}
+
+.menu-header {
+  color: #ffffff;
+}

@@ -1,0 +1,131 @@
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>DOA - Dead On Arrival</title>
+    <meta property="og:title" content="">
+
+    <title>DOA - Dead On Arrival</title>
+    <meta property="og:title" content="">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fancybox/jquery.fancybox-v=2.1.5.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/timer.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'>
+    <script src="js/reconnecting-websocket.min.js"></script>
+
+</head>
+
+<body>
+<div class="slide story" id="slide-1" data-slide="1">
+    <div class="container">
+        <div id="home-row-1" class="row">
+            <div class="col-12">
+                <h2 class="font-semibold">SAP <span class="font-thin">Guard</span></h2>
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /slide1 -->
+
+        <!-- Timer -->
+        <div id="home-row-2" class="row row-centered clearfix">
+            <img src="images/fingerprint.png" style="width: 150px; height: 200px;background-color: white"/>
+            <h3 class="font-semibold">Enter fingerprint to disable</h3>
+        </div>
+
+        <div id="home-row-3" class="row row-centered clearfix" style="margin-left: 90px">
+            <div class="timer"></div>
+        </div>
+
+    </div>
+    <!-- /container -->
+</div>
+<!-- /slide1 -->
+<script>
+    var timer;
+    var timerCurrent;
+    var timerFinish;
+    var percent = 50;
+    var timerSeconds = 60;
+    var size = 200;
+
+    function drawTimer(percent, secondsLeft) {
+
+        $('div.timer').html('<div class="percent"></div><div id="slice"' + (percent > 50 ? ' class="gt50"' : '') + '><div class="pie"></div>' + (percent > 50 ? '<div class="pie fill"></div>' : '') + '</div>');
+
+        var deg = 360 / 100 * percent;
+
+        $('#slice .pie').css({
+            '-moz-transform': 'rotate(' + deg + 'deg)',
+            '-webkit-transform': 'rotate(' + deg + 'deg)',
+            '-o-transform': 'rotate(' + deg + 'deg)',
+            'transform': 'rotate(' + deg + 'deg)'
+        });
+
+        $('.percent').html(secondsLeft);
+    }
+
+    function stopWatch() {
+
+        var seconds = (timerFinish - (new Date().getTime())) / 1000;
+        if (seconds <= 0) {
+            drawTimer(100, 0);
+            clearInterval(timer);
+            $('input[type=button]#watch').val('Start');
+            //alert('Finished counting down from ' + timerSeconds);
+
+        } else {
+            var percent = 100 - ((seconds / timerSeconds) * 100);
+            drawTimer(percent, Math.round(seconds));
+        }
+
+    }
+
+    $(document).ready(function () {
+
+        drawTimer(percent);
+        $('.timer').css('font-size', size + 'px');
+        timerCurrent = 0;
+        timerFinish = new Date().getTime() + (timerSeconds * 1000);
+        timer = setInterval('stopWatch()', 50);
+    });
+
+    var connection;
+    window.addEventListener("load", function () {
+				connection = new ReconnectingWebSocket("ws://" + window.location.hostname + ":8001", null, {debug: true, reconnectInterval: 3000});
+                connection.onopen = function () {
+                    console.log("Connection opened");
+                };
+                connection.onclose = function () {
+                    console.log("Connection closed")
+                };
+                connection.onerror = function () {
+                    console.error("Connection error")
+                };
+                connection.onmessage = function (event) {
+                    console.log(event.data);
+                    if (event.data) {
+                        var eventName;
+                        try {
+                            eventName = JSON.parse(event.data).event;
+                        } catch (e) {
+
+                        }
+                        if (eventName === "init") {
+                            window.location.href = 'mobile.html';
+                        }
+
+                    }
+                }
+            }
+    );
+
+</script>
+</body>
+</html>
