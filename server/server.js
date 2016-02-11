@@ -32,31 +32,3 @@ var server = http.createServer(function (req, res) {
     }
 }).listen(process.env.PORT || proxyPort);
 console.log("Proxy server listening on port " + (process.env.PORT || proxyPort));
-
-/**  Web Socket Server **/
-var server = http.createServer(app);
-server.listen(wsPort);
-
-var wss = new WebSocketServer({server: server});
-console.log("websocket server created");
-
-var clients = [];
-wss.on("connection", function(ws) {
-    clients.push(ws);
-    ws.on("close", function() {
-
-    });
-
-    ws.on("message", function(data) {
-        broadcast(data);
-    })
-});
-
-function broadcast(data){
-    clients.forEach(function(client){
-        if (client.readyState === 1){
-            client.send(data);
-        }
-    });
-
-}
