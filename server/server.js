@@ -1,5 +1,5 @@
 var express = require('express');
-var app = require('express')();
+var app = express();
 var ws = require("nodejs-websocket");
 var fs = require("fs");
 var http = require('http');
