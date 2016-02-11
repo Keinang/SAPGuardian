@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <title>DOA - Dead On Arrival</title>
+    <title>Guardian</title>
     <meta property="og:title" content="">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -24,7 +24,7 @@
     <div class="container">
         <div id="home-row-1" class="row">
             <div class="col-12">
-                <h2 class="font-semibold">DOA <span class="font-thin">DeadOnArrival</span></h2>
+                <h2 class="font-semibold">Guardian <span class="font-thin"></span></h2>
 
                 <h3 class="font-semibold">We are <span class="font-semibold">Your family and yours</span> protectors.
                 </h3>
@@ -32,34 +32,31 @@
             <!-- /col-12 -->
         </div>
         <!-- /row -->
-        <h4 class="font-thin text-left"> Events</h4>
+        <h4 class="font-semibold text-left"> Events</h4>
 
-        <div id="home-row-2" class="row row-centered clearfix">
-
-            <div class="col-3"><img height="46" width="46" src="images/fire.png"></div>
-            <div class="col-3"><img height="46" width="46" src="images/knife.png"></div>
-            <div class="col-3"><img height="46" width="46" src="images/tornado.png"></div>
-            <div class="col-3"><img height="46" width="46" src="images/earth.png"></div>
-            <div class="col-3"><img height="43" width="43" src="images/falling.png"></div>
+        <div id="home-row-2" class="row row-centered clearfix" style="margin-left: 40px">
+            <div class="mybutton"><img height="46" style="margin-top: 10px" width="46" src="images/fire.png"></div>
+            <div class="mybutton"><img height="46" style="margin-top: 10px" width="46" src="images/knife.png"></div>
+            <div class="mybutton"><img height="46" style="margin-top: 10px" width="46" src="images/tornado.png"></div>
+            <div class="mybutton"><img height="46" style="margin-top: 10px" width="46" src="images/earth.png"></div>
+            <div class="mybutton"><img height="43" style="margin-top: 10px" width="43" src="images/falling.png"></div>
         </div>
         <!-- /row -->
-        <h4 class="font-thin text-left">Ways to contact</h4>
+        <h4 class="font-semibold text-left">Ways to contact</h4>
 
-        <div id="home-row-3" class="row row-centered clearfix">
-            <div class="col-4"><img height="46" width="46" src="images/sms.png"></div>
-            <div class="col-4"><img height="43" width="43" src="images/mail.png"></div>
-            <div class="col-4"><img height="46" width="46" src="images/phone.png"></div>
+        <div id="home-row-3" class="row row-centered clearfix" style="margin-left: 40px">
+            <div class="mybutton"><img height="46" width="46" style="margin-top: 10px" src="images/sms.png"></div>
+            <div class="mybutton"><img height="43" width="43" style="margin-top: 10px" src="images/mail.png"></div>
+            <div class="mybutton"><img height="46" width="46" style="margin-top: 10px" src="images/phone.png"></div>
         </div>
         <!-- /row -->
-        <br>
-        <br>
         <br>
         <br>
 
         <!--<button id="buttonMain" type="button" class="btn btn-danger" onclick="enable()">Swipe to Protect</button>-->
         <div>
             <a class="button" onclick="enable()">
-                <span>Protect Me</span>
+                <span style="width: 280px">Guard Me</span>
             </a>
         </div>
 
@@ -83,8 +80,10 @@
 
 <script>
     function enable() {
-        // Change CSS to enable the app
-        console.log('enabled pressed');
+        var text = $('.button span');
+        text.css('color', '#AEBF3B');
+        text.css('text-shadow', '0px 1px #fff, 0px -1px #97A63A');
+        text.text('Armed');
     }
 
     var connection;
@@ -119,10 +118,98 @@
 </script>
 <style>
 
+/*html body{*/
+    /*background-color:#C6EDFF;*/
+    /*font-family: 'Enriqueta',Sans-Serif;*/
+    /*min-width:100%;*/
+    /*min-height:100%;*/
+    /*padding-bottom: 30px;*/
+/*}*/
+.mybutton{
+    /*[ Position ]*/
+    margin:0 10px 10px 10px;
+    float:left;
+    /*left: 10%;*/
+    /*top:90px;*/
+    /* [ Botton ] */
+    /*position:relative;*/
+    height:80px;
+    width:80px;
+    cursor:pointer;
+    line-height:47px;
+    background-color:#f1f1f1;
+    text-align:center;
+    font-size:30px;
+    display:inline-block;
+    text-shadow:0px -1px 1px rgba(255,255,255,0.5);
+    color:#444;
+    /* Transitions */
+    -moz-transition:.1s ease-out;
+    -webkit-transition:.1s ease-out;
+    -o-transition:.1s ease-out;
+    -ms-transition:.1s ease-out;
+    -khtml-transition:.1s ease-out;
+    transition:.1s ease-out;
+    /* Shadows */
+    box-shadow:inset 0 0 5px 0 rgba(255,255,255,0.5);
+    -moz-box-shadow:inset 0 0 5px 0 rgba(255,255,255,0.5);
+    -ms-box-shadow:inset 0 0 5px 0 rgba(255,255,255,0.5);
+    -webkit-box-shadow:inset 0 0 5px 0 rgba(255,255,255,0.5);
+    -khtml-box-shadow:inset 0 0 5px 0 rgba(255,255,255,0.5);
+    -o-box-shadow:inset 0 0 5px 0 rgba(255,255,255,0.5);
+    /* Borders */
+    border-width:1px;
+    border-style:solid;
+    border-left-color:#777;
+    border-right-color:#777;
+    border-top-color:#999;
+    border-bottom:4px solid #555;
+    /* {{ No selectable }} */
+    user-select:none;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -o-user-select:none;
+    -ms-user-select:none;
+    -khtml-user-select:none;
+    /*[{- Border radius -}]*/
+    border-radius:50px;
+    -moz-border-radius:50px;
+    -webkit-border-radius:50px;
+    -ms-border-radius:50px;
+    -khtml-border-radius:50px;
+    -o-border-radius:50px;
+    /* Gradient */
+    background-image:-moz-linear-gradient(top,transparent,rgba(0,0,0,0.2));
+    background-image:-webkit-linear-gradient(top,transparent,rgba(0,0,0,0.2));
+    background-image:-o-linear-gradient(top,transparent,rgba(0,0,0,0.2));
+    background-image:-khtml-linear-gradient(top,transparent,rgba(0,0,0,0.2));
+    background-image:-ms-linear-gradient(top,transparent,rgba(0,0,0,0.2));
+    background-image:linear-gradient(top,transparent,rgba(0,0,0,0.2));
+}
+.mybutton:hover{
+    color:#333;
+    /*{Gradient}*/
+    background-image:-moz-linear-gradient(top,transparent,rgba(0,0,0,0.17));
+    background-image:-webkit-linear-gradient(top,transparent,rgba(0,0,0,0.17));
+    background-image:-ms-linear-gradient(top,transparent,rgba(0,0,0,0.17));
+    background-image:-khtml-linear-gradient(top,transparent,rgba(0,0,0,0.17));
+    background-image:-o-linear-gradient(top,transparent,rgba(0,0,0,0.17));
+    background-image:linear-gradient(top,transparent,rgba(0,0,0,0.17));
+}
+.mybutton:active{
+    padding-top:3px;
+    /*color:#777;*/
+    /*border:1px solid #999;*/
+    /*{Shadow}*/
+    /*box-shadow:inset 0 0 5px 0 #333;*/
+    /*-moz-box-shadow:inset 0 0 5px 0 #333;*/
+    /*-webkit-box-shadow:inset 0 1px 2px 0 #333, 0 1px 1px 0 #fff;*/
+}
+
     .button {
         position: absolute;
-        top: 100px;
-        left: 200px;
+        /*top: 100px;*/
+        left: 10%;
         display: inline-block;
         margin: 0 auto;
 
@@ -141,39 +228,39 @@
     .button span {
         background-color: #E8E8E8;
 
-        background-image: /* gloss gradient */ -webkit-gradient(
-                linear,
-                left bottom,
-                left top,
-                color-stop(50%, rgba(255, 255, 255, 0)),
-                color-stop(50%, rgba(255, 255, 255, 0.3)),
-                color-stop(100%, rgba(255, 255, 255, 0.2))),
-            /* dark outside gradient */ -webkit-gradient(
-                linear,
-                left top,
-                right top,
-                color-stop(0%, rgba(210, 210, 210, 0.3)),
-                color-stop(20%, rgba(210, 210, 210, 0)),
-                color-stop(80%, rgba(210, 210, 210, 0)),
-                color-stop(100%, rgba(210, 210, 210, 0.3))),
-            /* light inner gradient */ -webkit-gradient(
-                linear,
-                left top,
-                right top,
-                color-stop(0%, rgba(255, 255, 255, 0)),
-                color-stop(20%, rgba(255, 255, 255, 0.5)),
-                color-stop(80%, rgba(255, 255, 255, 0.5)),
-                color-stop(100%, rgba(255, 255, 255, 0))),
-            /* diagonal line pattern */ -webkit-gradient(
-                linear,
-                0% 100%,
-                100% 0%,
-                color-stop(0%, rgba(255, 255, 255, 0)),
-                color-stop(40%, rgba(255, 255, 255, 0)),
-                color-stop(40%, #D2D2D1),
-                color-stop(60%, #D2D2D1),
-                color-stop(60%, rgba(255, 255, 255, 0)),
-                color-stop(100%, rgba(255, 255, 255, 0)));
+        /*background-image: *//* gloss gradient *//* -webkit-gradient(*/
+                /*linear,*/
+                /*left bottom,*/
+                /*left top,*/
+                /*color-stop(50%, rgba(255, 255, 255, 0)),*/
+                /*color-stop(50%, rgba(255, 255, 255, 0.3)),*/
+                /*color-stop(100%, rgba(255, 255, 255, 0.2))),*/
+            /* dark outside gradient *//* -webkit-gradient(*/
+                /*linear,*/
+                /*left top,*/
+                /*right top,*/
+                /*color-stop(0%, rgba(210, 210, 210, 0.3)),*/
+                /*color-stop(20%, rgba(210, 210, 210, 0)),*/
+                /*color-stop(80%, rgba(210, 210, 210, 0)),*/
+                /*color-stop(100%, rgba(210, 210, 210, 0.3))),*/
+            /* light inner gradient *//* -webkit-gradient(*/
+                /*linear,*/
+                /*left top,*/
+                /*right top,*/
+                /*color-stop(0%, rgba(255, 255, 255, 0)),*/
+                /*color-stop(20%, rgba(255, 255, 255, 0.5)),*/
+                /*color-stop(80%, rgba(255, 255, 255, 0.5)),*/
+                /*color-stop(100%, rgba(255, 255, 255, 0))),*/
+            /* diagonal line pattern *//* -webkit-gradient(*/
+                /*linear,*/
+                /*0% 100%,*/
+                /*100% 0%,*/
+                /*color-stop(0%, rgba(255, 255, 255, 0)),*/
+                /*color-stop(40%, rgba(255, 255, 255, 0)),*/
+                /*color-stop(40%, #D2D2D1),*/
+                /*color-stop(60%, #D2D2D1),*/
+                /*color-stop(60%, rgba(255, 255, 255, 0)),*/
+                /*color-stop(100%, rgba(255, 255, 255, 0)));*/
 
         -webkit-box-shadow: 0px -1px #fff, /* top highlight */ 0px 1px 1px #FFFFFF; /* bottom edge */
 
@@ -187,7 +274,8 @@
 
         color: #3A474D;
         text-transform: uppercase;
-        font-family: 'TradeGothicLTStd-BdCn20', 'PT Sans Narrow';
+        /*font-family: 'TradeGothicLTStd-BdCn20', 'PT Sans Narrow';*/
+        font-family: "Titillium Web", sans-serif;
         font-weight: 700;
         font-size: 32px;
 
@@ -215,7 +303,7 @@
     }
 
     .button span:after {
-        content: ">";
+        /*content: ">";*/
         display: block;
         width: 10px;
         height: 10px;
@@ -224,9 +312,10 @@
         right: 14px;
         top: 12px;
 
-        font-family: 'Cabin';
+        /*font-family: 'Cabin';*/
+        font-family: "Titillium Web", sans-serif;
         font-weight: 700;
-        color: #AEBF3B;
+        /*color: #AEBF3B;*/
         text-shadow: 0px 1px #fff, 0px -1px #97A63A;
         font-size: 26px;
     }

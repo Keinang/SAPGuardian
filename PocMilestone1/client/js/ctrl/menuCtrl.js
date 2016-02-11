@@ -42,8 +42,6 @@ app.controller("menuCtrl", function($scope,$timeout, httpServices, targetsServic
     };
 
     $scope.setFocus = function (house){
-//        $scope.targets.statusBar = "";
-        $scope.data.currentSelectedName = house.name;
         $scope.targets.currentSelectedName = house.name;
         window.focusOnHouse(house);
     };
