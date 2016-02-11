@@ -35,6 +35,7 @@ var server = http.createServer(function (req, res) {
 console.log("Proxy server listening on port " + proxyPort);
 
 /**  Web Socket Server **/
+    /*
 var server = ws.createServer(function (connection) {
     connection.on("text", function (json) {
         console.log(json);
@@ -50,5 +51,5 @@ console.log("Web socket listening on port " + webSocketPort);
 function broadcast(str) {
     server.connections.forEach(function (connection) {
         connection.sendText(str)
-    })
+    })*/
 };
