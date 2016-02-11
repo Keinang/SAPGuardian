@@ -23,10 +23,10 @@ var proxy = httpProxy.createProxyServer({});
 var server = http.createServer(function (req, res) {
     try {
         console.log(req.url);
-        if (req.url.indexOf('/DOA---Innojam2016') !== -1) {
-            proxy.web(req, res, {target: 'http://localhost:8082'});
-        } else {
+        if (req.url.indexOf('video') !== -1 || req.url.indexOf('audio.wav') !== -1) {
             proxy.web(req, res, {target: 'http://192.168.43.1:8080'});
+        } else {
+            proxy.web(req, res, {target: 'http://localhost:8082'});
         }
     } catch (e) {
 
