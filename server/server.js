@@ -51,5 +51,5 @@ console.log("Web socket listening on port " + webSocketPort);
 function broadcast(str) {
     server.connections.forEach(function (connection) {
         connection.sendText(str)
-    })*/
-};
+    })
+};*/
