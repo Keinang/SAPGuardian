@@ -34,7 +34,7 @@
 
     width:1em;
 
-    height:1em;
+    height:180px;
 
     clip:rect(0px,1em,1em,0.5em);
 
@@ -230,6 +230,10 @@
     padding: 10px 44px;
 }
 
+html, body {
+    height: 100%;
+    width: 100%;
+}
 .text {
     margin-top: 40px;
     padding-bottom: 40px;
