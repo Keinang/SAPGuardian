@@ -32,9 +32,8 @@ var itemServices = app.service('targetsServices', function ($interval,notificati
         if (data.version && this.version !== data.version){
             var bIsWarning = false;
 
-            var sSelectedItem = "Keinan, Gilad";
+            var sSelectedItem = "Alhazov, Sergey";
             var nSelectedIndex = 0;
-
 
             if (this.item.length < data.targets.length){
 //                notificationUtils.notifyPopupDanger({title : "New Target!", message: "" , icon: "fa fa-bell"})
@@ -43,7 +42,7 @@ var itemServices = app.service('targetsServices', function ($interval,notificati
                 for (var i in data.targets){
                     if (data.targets[i].name === sSelectedItem){
                         for (var j in this.item){
-                            if (this.item[j].name === sSelectedItem){
+                            if (this.item[j].name === sSelectedItem && data.targets[i].warningImage === "warning.png"){
                                 nSelectedIndex = j;
                                 this.item[j].warningImage = "warning.png";
                                 notificationUtils.notifyPopupDanger({title : "Alert!", message: "User: Sergey Alhazov has failed Check-In. Dispatch law enforcement immediately!" , icon: "fa fa-bell"});

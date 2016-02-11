@@ -29,7 +29,16 @@ jQuery(document).ready(function () {
                 data.version = version;
                 version++;
 //                data.targets.push(loadData);
-                data.targets[data.targets.length - 1].warningImage = "warning.png";
+//                data.targets[data.targets.length - 1].warningImage = "warning.png";
+
+                var sSelectedItem = "Alhazov, Sergey";
+                for (var j in data.targets){
+                    if (data.targets[j].name === sSelectedItem){
+                        data.targets[j].warningImage = "warning.png";
+                        break;
+                    }
+                }
+
                 localStorage.setItem("targets", JSON.stringify(data));
             }
         });
