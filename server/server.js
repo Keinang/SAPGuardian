@@ -10,7 +10,6 @@ var expressPort = 8082;
 var proxyPort = 8081;
 var webSocketPort = 8001;
 
-
 /**  Express **/
 app.use('/DOA---Innojam2016', express.static('../'));
 
@@ -31,7 +30,7 @@ var server = http.createServer(function (req, res) {
     } catch (e) {
 
     }
-}).listen(proxyPort, "0.0.0.0");
+}).listen(process.env.PORT || 5000);
 console.log("Proxy server listening on port " + proxyPort);
 
 /**  Web Socket Server **/
