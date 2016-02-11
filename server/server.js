@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-var ws = require("nodejs-websocket");
 var fs = require("fs");
 var http = require('http');
 var httpProxy = require('http-proxy');
@@ -14,6 +13,20 @@ app.use('/DOA---Innojam2016', express.static('../'));
 
 app.listen(process.env.PORT || expressPort, function () {
     console.log('Express server listening on port ' + expressPort);
+});
+var okScreen = {state: false};
+app.get('/getOkScreen', function (req, res) {
+    res.send(JSON.stringify(okScreen));
+});
+
+app.post('/setOkScreenTrue', function (req, res) {
+    okScreen.state = true;
+    res.send(JSON.stringify(okScreen));
+});
+
+app.post('/setOkScreenFalse', function (req, res) {
+    okScreen.state = false;
+    res.send(JSON.stringify(okScreen));
 });
 
 /**  Proxy Server **/

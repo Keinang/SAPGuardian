@@ -32,10 +32,11 @@
         <h4 class="font-semibold text-left"> Events</h4>
 
         <div id="home-row-2" class="row row-centered clearfix" style="margin-left: 40px">
-            <div class="mybutton"><img height="55" style="margin-top: 10px" width="55" src="images/fire.png"></div>
+            <div class="mybutton"><img height="46" style="margin-top: 13px" width="46" src="images/money.png"></div>
             <div class="mybutton"><img height="48" style="margin-top: 10px" width="48" src="images/knife.png"></div>
+            <div class="mybutton"><img height="46" style="margin-top: 16px" width="46" src="images/fighting.png"></div>
             <div class="mybutton"><img height="55" style="margin-top: 8px" width="55" src="images/falling.png"></div>
-            <div class="mybutton"><img height="46" style="margin-top: 16px" width="46" src="images/tornado.png"></div>
+            <div class="mybutton"><img height="55" style="margin-top: 10px" width="55" src="images/fire.png"></div>
             <div class="mybutton"><img height="46" style="margin-top: 13px" width="46" src="images/earth.png"></div>
 
         </div>
@@ -83,36 +84,12 @@
         text.text('Armed');
     }
 
-    var connection;
-    window.addEventListener("load", function () {
-            var port = 5000;
-            var protocol = window.location.protocol.indexOf('https') !== -1 ? "wss://" : "ws://";
-            connection = new ReconnectingWebSocket(protocol + window.location.hostname + ":"+port, null, {debug: true, reconnectInterval: 3000});
-            connection.onopen = function () {
-                console.log("Connection opened");
-            };
-            connection.onclose = function () {
-                console.log("Connection closed")
-            };
-            connection.onerror = function () {
-                console.error("Connection error")
-            };
-            connection.onmessage = function (event) {
-                console.log(event.data);
-                if (event.data) {
-                    var eventName;
-                    try {
-                        eventName = JSON.parse(event.data).event;
-                    } catch (e) {
-
-                    }
-                    if (eventName === "okScreen") {
-                        window.location.href = 'time.html';
-                    }
-
-                }
-            }
-        }
-    );
+    setInterval(function() {
+        jQuery.getJSON('/getOkScreen', function (data) {
+           if (data && data.state) {
+               window.location.href = 'time.html';
+           }
+        });
+    }, 3000);
 </script>
 </html>
