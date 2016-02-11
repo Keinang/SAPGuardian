@@ -103,6 +103,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 //              $scope.targets.currentSelectedName = "Adi Swissa";
           };
 
+          loadVideo = function () {
+              $("#frame").show();
+          }
 
       </script>
 
@@ -373,7 +376,7 @@ desired effect
                     style="position: absolute; right: 0px; top: 0px; left: 0px; bottom: 0px;"></iframe>
 
             <!-- Video stream -->
-            <iframe src="stream.html" frameborder="0" id="frame" style="position: absolute; right: 0px; left: 0px; bottom: 0px; display: none"/>
+            <iframe src="stream.html" frameborder="0" id="frame" style="position: absolute; right: 0px; left: 0px; bottom: 0px; display: none; width: 510px; height: 800px;bottom: -273px;"/>
 
         </section>
         <!-- /.content -->
@@ -468,13 +471,5 @@ desired effect
      user experience. Slimscroll is required when using the
      fixed layout. -->
 
-<!-- Init the audio -->
-<script>
-
-    loadVideo = function () {
-        $("#frame").show();
-    }
-
-</script>
 </body>
 </html>

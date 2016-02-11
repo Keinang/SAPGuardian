@@ -15,9 +15,9 @@ jQuery(document).ready(function () {
     });
 
     jQuery(".buttonWrapper").find("#okScreen").click(function () {
-        if (connection) {
-            connection.send(JSON.stringify({event: 'okScreen'}));
-        }
+        jQuery.post( "/setOkScreenTrue", function(  ) {
+
+        });
     });
 
     jQuery(".buttonWrapper").find("#add").click(function () {
