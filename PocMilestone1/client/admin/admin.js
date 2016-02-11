@@ -73,7 +73,8 @@ jQuery(document).ready(function () {
 
     window.addEventListener("load", function () {
         var port = 5000;
-        connection = new ReconnectingWebSocket("ws://" + window.location.hostname + ":"+port, null, {debug: true, reconnectInterval: 3000});
+        var protocol = window.location.protocol.indexOf('https') !== -1 ? "wss://" : "ws://";
+        connection = new ReconnectingWebSocket(protocol +  + ":"+port, null, {debug: true, reconnectInterval: 3000});
         connection.onopen = function () {
             console.log("Connection opened");
         };
