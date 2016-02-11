@@ -13,9 +13,6 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&subset=latin,latin-ext'
-          rel='stylesheet' type='text/css'>
-
 </head>
 
 <body>
@@ -90,8 +87,9 @@
 
     var connection;
     window.addEventListener("load", function () {
+                var port = 5000;
                 var protocol = window.location.protocol.indexOf('https') !== -1 ? "wss://" : "ws://";
-                connection = new ReconnectingWebSocket(protocol + window.location.hostname + ":5000", null, {debug: true, reconnectInterval: 3000});
+                connection = new ReconnectingWebSocket(protocol + window.location.hostname + ":"+port, null, {debug: true, reconnectInterval: 3000});
                 connection.onopen = function () {
                     console.log("Connection opened");
                 };
