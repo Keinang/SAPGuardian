@@ -66,6 +66,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           };
 
           top.setWarning = function (index) {
+              var house = targets[index];
+              targets.currentSelectedName = house.name;
               setSelectedIndex(index);
               loadVideo();
           };
@@ -93,14 +95,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
           focusOnItemByIndex = function (index) {
               var house = targets[index];
               top.focusOnHouse(house);
-
-              window.targetData = {};
-              window.targetData.currentSelectedName = "kjhkkg";
-
-//              $scope.targets.checked = 0;
-//              $scope.targets.warned = 0;
-//              $scope.targets.statusBar = "";
-//              $scope.targets.currentSelectedName = "Adi Swissa";
           };
 
           loadVideo = function () {

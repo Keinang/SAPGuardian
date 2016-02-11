@@ -8,8 +8,6 @@ app.controller("menuCtrl", function($scope,$timeout, httpServices, targetsServic
     $scope.targets.warned = 0;
     $scope.targets.statusBar = "";
     $scope.targets.currentSelectedName = "Adi Swissa";
-    $scope.data = {};
-    $scope.data.currentSelectedName = "aaa";
 
     $scope.call = function (target) {
         notificationUtils.notifyPopupSuccess({title : "Call", message: "you called " + target.name, icon: "fa fa-phone"})
