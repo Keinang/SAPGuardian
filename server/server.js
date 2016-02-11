@@ -4,16 +4,15 @@ var ws = require("nodejs-websocket");
 var fs = require("fs");
 var http = require('http');
 var httpProxy = require('http-proxy');
-var WebSocketServer = require("ws").Server;
 
 /**  Configurations **/
 var expressPort = 8082;
 var proxyPort = 8081;
-var wsPort = 5000;
+
 /**  Express **/
 app.use('/DOA---Innojam2016', express.static('../'));
 
-app.listen(expressPort, function () {
+app.listen(process.env.PORT || expressPort, function () {
     console.log('Express server listening on port ' + expressPort);
 });
 
