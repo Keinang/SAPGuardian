@@ -2,7 +2,7 @@
 <html lang="en" style="overflow: hidden; height: 100%; width: 100%">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Guardian - Stream</title>
 </head>
 <body>
 
@@ -53,13 +53,13 @@
         video_pane.style.visibility = "visible";
 
         var browser_video = document.getElementById('browser_video');
-        browser_video.src = "http://localhost:8081//video";
+        browser_video.src = "http://localhost:5000/video";
 
         var audio_panel = document.getElementById('audio_panel');
         audio_panel.style.visibility = "visible";
 
         var audio = document.getElementById('html5_audio');
-        audio.src = "http://localhost:8081/audio.wav";
+        audio.src = "http://localhost:5000/audio.wav";
 
         var ctx = new AudioContext();
         var analyser = ctx.createAnalyser();

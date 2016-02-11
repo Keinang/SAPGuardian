@@ -6,7 +6,7 @@ var httpProxy = require('http-proxy');
 
 /**  Configurations **/
 var expressPort = 8082;
-var proxyPort = 8081;
+var proxyPort = 5000;
 
 /**  Express **/
 app.use('/DOA---Innojam2016', express.static('../'));
