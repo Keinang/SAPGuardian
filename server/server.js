@@ -11,7 +11,7 @@ var proxyPort = 5000;
 /**  Express **/
 app.use('/DOA---Innojam2016', express.static('../'));
 
-app.listen(process.env.PORT || expressPort, function () {
+app.listen(expressPort, function () {
     console.log('Express server listening on port ' + expressPort);
 });
 var okScreen = {state: false};
