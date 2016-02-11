@@ -72,7 +72,8 @@ jQuery(document).ready(function () {
 
 
     window.addEventListener("load", function () {
-        connection = new ReconnectingWebSocket("ws://" + window.location.hostname + ":8001", null, {debug: true, reconnectInterval: 3000});
+        var port = 5000;
+        connection = new ReconnectingWebSocket("ws://" + window.location.hostname + ":"+port, null, {debug: true, reconnectInterval: 3000});
         connection.onopen = function () {
             console.log("Connection opened");
         };
