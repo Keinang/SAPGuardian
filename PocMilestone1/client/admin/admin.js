@@ -5,7 +5,7 @@ jQuery(document).ready(function () {
     var version = 2;
     var connection;
     jQuery(".buttonWrapper").find("#init").click(function () {
-        jQuery.get('/DOA---Innojam2016/PocMilestone1/client/mock/targets.json', function (data) {
+        jQuery.get('/SAPGuardian/PocMilestone1/client/mock/targets.json', function (data) {
             data.version = version;
             version++;
             localStorage.setItem("targets", JSON.stringify(data));
@@ -22,7 +22,7 @@ jQuery(document).ready(function () {
     });
 
     jQuery(".buttonWrapper").find("#add").click(function () {
-        jQuery.get('/DOA---Innojam2016/PocMilestone1/client/mock/addTarget.json', function (loadData) {
+        jQuery.get('/SAPGuardian/PocMilestone1/client/mock/addTarget.json', function (loadData) {
             var dataStr = localStorage.getItem("targets");
             if (dataStr) {
                 var data = JSON.parse(dataStr);

@@ -46,7 +46,7 @@ var itemServices = app.service('targetsServices', function ($interval,notificati
                             if (this.item[j].name === sSelectedItem){
                                 nSelectedIndex = j;
                                 this.item[j].warningImage = "warning.png";
-                                notificationUtils.notifyPopupDanger({title : "New Warning!", message: "bla bla" , icon: "fa fa-bell"});
+                                notificationUtils.notifyPopupDanger({title : "Alert!", message: "User: Sergey Alhazov has failed Check-In. Dispatch law enforcement immediately!" , icon: "fa fa-bell"});
                                 bIsWarning = true;
                                 break;
                                 /*if (data.targets[i].error){
