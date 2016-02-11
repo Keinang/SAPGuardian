@@ -3,22 +3,21 @@
  */
 jQuery(document).ready(function () {
     var version = 2;
-    var connection;
     jQuery(".buttonWrapper").find("#init").click(function () {
         jQuery.get('/DOA---Innojam2016/PocMilestone1/client/mock/targets.json', function (data) {
             data.version = version;
             version++;
             localStorage.setItem("targets", JSON.stringify(data));
         });
-        if (connection) {
-            connection.send(JSON.stringify({event: 'init'}));
-        }
+        jQuery.post( "/setOkScreenFalse", function(  ) {
+
+        });
     });
 
     jQuery(".buttonWrapper").find("#okScreen").click(function () {
-        if (connection) {
-            connection.send(JSON.stringify({event: 'okScreen'}));
-        }
+        jQuery.post( "/setOkScreenTrue", function(  ) {
+
+        });
     });
 
     jQuery(".buttonWrapper").find("#add").click(function () {
@@ -80,21 +79,5 @@ jQuery(document).ready(function () {
     });
 
 
-    window.addEventListener("load", function () {
-        var port = 5000;
-        var protocol = window.location.protocol.indexOf('https') !== -1 ? "wss://" : "ws://";
-        connection = new ReconnectingWebSocket(protocol + window.location.hostname + ":"+port, null, {debug: true, reconnectInterval: 3000});
-        connection.onopen = function () {
-            console.log("Connection opened");
-        };
-        connection.onclose = function () {
-            console.log("Connection closed")
-        };
-        connection.onerror = function () {
-            console.error("Connection error")
-        };
-        connection.onmessage = function (event) {
-            console.log(event.data);
-        }
-    })
+
 });

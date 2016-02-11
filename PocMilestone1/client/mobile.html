@@ -85,37 +85,13 @@
         text.text('Armed');
     }
 
-    var connection;
-    window.addEventListener("load", function () {
-                var port = 5000;
-                var protocol = window.location.protocol.indexOf('https') !== -1 ? "wss://" : "ws://";
-                connection = new ReconnectingWebSocket(protocol + window.location.hostname + ":"+port, null, {debug: true, reconnectInterval: 3000});
-                connection.onopen = function () {
-                    console.log("Connection opened");
-                };
-                connection.onclose = function () {
-                    console.log("Connection closed")
-                };
-                connection.onerror = function () {
-                    console.error("Connection error")
-                };
-                connection.onmessage = function (event) {
-                    console.log(event.data);
-                    if (event.data) {
-                        var eventName;
-                        try {
-                            eventName = JSON.parse(event.data).event;
-                        } catch (e) {
-
-                        }
-                        if (eventName === "okScreen") {
-                            window.location.href = 'time.html';
-                        }
-
-                    }
-                }
-            }
-    );
+    setInterval(function() {
+        jQuery.getJSON('/getOkScreen', function (data) {
+           if (data && data.state) {
+               window.location.href = 'time.html';
+           }
+        });
+    }, 3000);
 </script>
 <style>
 
