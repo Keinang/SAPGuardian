@@ -37,8 +37,8 @@
         </div>
 
         <div id="home-row-3" class="row row-centered clearfix" style="margin-left: 0px; margin-top: 22px">
-            <!--<div class="timer" style="height: 180px"></div>-->
-            <input type="text" id="dial" />
+            <div class="timer" style="height: 180px; margin-left: 100px"></div>
+            <!--<input type="text" id="dial" />-->
         </div>
 
     </div>
@@ -46,83 +46,83 @@
 </div>
 <!-- /slide1 -->
 <script>
-//    var timer;
-//    var timerCurrent;
-//    var timerFinish;
-//    var percent = 50;
-//    var timerSeconds = 30;
-//    var size = 200;
-//
-//    function drawTimer(percent, secondsLeft) {
-//
-//        $('div.timer').html('<div class="percent"></div><div id="slice"' + (percent > 50 ? ' class="gt50"' : '') + '><div class="pie"></div>' + (percent > 50 ? '<div class="pie fill"></div>' : '') + '</div>');
-//
-//        var deg = 360 / 100 * percent;
-//
-//        $('#slice .pie').css({
-//            '-moz-transform': 'rotate(' + deg + 'deg)',
-//            '-webkit-transform': 'rotate(' + deg + 'deg)',
-//            '-o-transform': 'rotate(' + deg + 'deg)',
-//            'transform': 'rotate(' + deg + 'deg)'
-//        });
-//
-//        $('.percent').html(secondsLeft);
-//    }
-//
-//    function stopWatch() {
-//        var seconds = (timerFinish - (new Date().getTime())) / 1000;
-//        if (seconds <= 0) {
-//            drawTimer(100, 0);
-//            clearInterval(timer);
-//            $('input[type=button]#watch').val('Start');
-//            //alert('Finished counting down from ' + timerSeconds);
-//        } else {
-//            var percent = 100 - ((seconds / timerSeconds) * 100);
-//            drawTimer(percent, Math.round(seconds));
-//        }
-//    }
-//
-//    $(document).ready(function () {
-//
-//        drawTimer(percent);
-//        $('.timer').css('font-size', size + 'px');
-//        timerCurrent = 0;
-//        timerFinish = new Date().getTime() + (timerSeconds * 1000);
-//        timer = setInterval('stopWatch()', 50);
-//    });
-//
-//    var connection;
-//    window.addEventListener("load", function () {
-//                var port = 5000;
-//                var protocol = window.location.protocol.indexOf('https') !== -1 ? "wss://" : "ws://";
-//				connection = new ReconnectingWebSocket(protocol + window.location.hostname + ":"+port, null, {debug: true, reconnectInterval: 3000});
-//                connection.onopen = function () {
-//                    console.log("Connection opened");
-//                };
-//                connection.onclose = function () {
-//                    console.log("Connection closed")
-//                };
-//                connection.onerror = function () {
-//                    console.error("Connection error")
-//                };
-//                connection.onmessage = function (event) {
-//                    console.log(event.data);
-//                    if (event.data) {
-//                        var eventName;
-//                        try {
-//                            eventName = JSON.parse(event.data).event;
-//                        } catch (e) {
-//
-//                        }
-//                        if (eventName === "init") {
-//                            window.location.href = 'mobile.html';
-//                        }
-//
-//                    }
-//                }
-//            }
-//    );
+    var timer;
+    var timerCurrent;
+    var timerFinish;
+    var percent = 50;
+    var timerSeconds = 30;
+    var size = 200;
 
+    function drawTimer(percent, secondsLeft) {
+
+        $('div.timer').html('<div class="percent"></div><div id="slice"' + (percent > 50 ? ' class="gt50"' : '') + '><div class="pie"></div>' + (percent > 50 ? '<div class="pie fill"></div>' : '') + '</div>');
+
+        var deg = 360 / 100 * percent;
+
+        $('#slice .pie').css({
+            '-moz-transform': 'rotate(' + deg + 'deg)',
+            '-webkit-transform': 'rotate(' + deg + 'deg)',
+            '-o-transform': 'rotate(' + deg + 'deg)',
+            'transform': 'rotate(' + deg + 'deg)'
+        });
+
+        $('.percent').html(secondsLeft);
+    }
+
+    function stopWatch() {
+        var seconds = (timerFinish - (new Date().getTime())) / 1000;
+        if (seconds <= 0) {
+            drawTimer(100, 0);
+            clearInterval(timer);
+            $('input[type=button]#watch').val('Start');
+            //alert('Finished counting down from ' + timerSeconds);
+        } else {
+            var percent = 100 - ((seconds / timerSeconds) * 100);
+            drawTimer(percent, Math.round(seconds));
+        }
+    }
+
+    $(document).ready(function () {
+
+        drawTimer(percent);
+        $('.timer').css('font-size', size + 'px');
+        timerCurrent = 0;
+        timerFinish = new Date().getTime() + (timerSeconds * 1000);
+        timer = setInterval('stopWatch()', 50);
+    });
+
+    var connection;
+    window.addEventListener("load", function () {
+                var port = 5000;
+                var protocol = window.location.protocol.indexOf('https') !== -1 ? "wss://" : "ws://";
+				connection = new ReconnectingWebSocket(protocol + window.location.hostname + ":"+port, null, {debug: true, reconnectInterval: 3000});
+                connection.onopen = function () {
+                    console.log("Connection opened");
+                };
+                connection.onclose = function () {
+                    console.log("Connection closed")
+                };
+                connection.onerror = function () {
+                    console.error("Connection error")
+                };
+                connection.onmessage = function (event) {
+                    console.log(event.data);
+                    if (event.data) {
+                        var eventName;
+                        try {
+                            eventName = JSON.parse(event.data).event;
+                        } catch (e) {
+
+                        }
+                        if (eventName === "init") {
+                            window.location.href = 'mobile.html';
+                        }
+
+                    }
+                }
+            }
+    );
+/*
 var time = -30,
         maxTime = 0;
 var timer;
@@ -156,7 +156,7 @@ function myWatch() {
     }
 };
 
-timer = setInterval(myWatch, 1000);
+timer = setInterval(myWatch, 1000);*/
 /*setInterval(function() {
     if(time > maxTime) {
         time = 0;
